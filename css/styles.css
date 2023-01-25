@@ -14,14 +14,14 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-weight: 400;
+  font-style: normal;
   font-size: 16px;
+  font-family: "Roboto", sans-serif;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--text-color);
-  background-color: var(--background-color);
 }
 
 html {
@@ -43,9 +43,9 @@ ul {
 }
 
 ul {
-  list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 a {
@@ -54,16 +54,16 @@ a {
 
 .visually-hidden {
   position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
   width: 1px;
   height: 1px;
   margin: -1px;
-  border: 0;
   padding: 0;
+  border: 0;
 
   white-space: nowrap;
   clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }
 
 .conteiter {
@@ -85,14 +85,14 @@ a {
 
 .logo {
   margin-right: 76px;
-  font-family: "Raleway";
-  font-style: normal;
+  color: var(--accent-color);
   font-weight: 800;
+  font-style: normal;
   font-size: 18px;
+  font-family: "Raleway";
   line-height: 1.33;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--accent-color);
 }
 
 .logo-dark {
@@ -112,8 +112,8 @@ a {
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
-  font-weight: 500;
   color: var(--main-text-color);
+  font-weight: 500;
 }
 
 .site-nav-link.current {
@@ -127,13 +127,13 @@ a {
 
 .contacts {
   display: flex;
-  align-items: center;
   gap: 40px;
+  align-items: center;
 }
 
 .contact-link {
-  font-style: normal;
   color: var(--text-color);
+  font-style: normal;
 }
 
 .contact-link:focus,
@@ -144,35 +144,45 @@ a {
 /* section hero */
 
 .hero {
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 188px;
   padding-bottom: 188px;
-  background-color: var(--second-background-color);
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
 }
 
 .hero-title {
   width: 494px;
-  margin-left: auto;
   margin-right: auto;
   margin-bottom: 48px;
+  margin-left: auto;
+  color: var(--background-color);
   font-weight: 700;
   font-size: 56px;
   line-height: 1.07;
-  color: var(--background-color);
 }
 
 .button-hero {
   padding: 16px 32px;
   border: 0;
   border-radius: 4px;
-  font-family: "Roboto";
-  font-style: normal;
+  background-color: var(--accent-color);
+  color: var(--background-color);
   font-weight: 500;
+  font-style: normal;
   font-size: 16px;
+  font-family: "Roboto";
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: var(--background-color);
-  background-color: var(--accent-color);
   cursor: pointer;
 }
 
@@ -198,28 +208,40 @@ a {
 }
 
 .feature-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
   width: 264px;
 }
 
+.features-icons {
+  width: 264px;
+  height: 112px;
+}
+
+.icon-feature {
+  margin: 24px 100px;
+}
+
 .feature-title {
-  margin-bottom: 8px;
+  color: var(--main-text-color);
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
-  color: var(--main-text-color);
 }
 
 /* section work */
 
 .work-title,
 .team-title {
-  text-align: center;
   margin-bottom: 72px;
+  color: var(--main-text-color);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
+  text-align: center;
   text-transform: capitalize;
-  color: var(--main-text-color);
 }
 
 .work-list {
@@ -248,24 +270,26 @@ img {
 }
 
 .team-member {
-  flex-basis: calc((100% - (var(--indent)*(var(--items-member)-1))) / var(--items-member));
+  flex-basis: calc(
+    (100% - (var(--indent) * (var(--items-member) - 1))) / var(--items-member)
+  );
+  border-top: none;
+  border-radius: 0px 0px 4px 4px;
   background-color: var(--background-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .txt-content {
   padding: 32px 16px;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-  border-radius: 0px 0px 4px 4px;
-  border-top: none;
 }
 
 .team-member-title {
   margin-bottom: 8px;
+  color: var(--main-text-color);
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
-  color: var(--main-text-color);
 }
 
 /* footer */
@@ -281,8 +305,8 @@ img {
 }
 
 .footer-text {
-  margin-top: 16px;
   width: 264px;
+  margin-top: 16px;
   color: var(--second-text-color);
 }
 
@@ -297,10 +321,10 @@ img {
 
 .filters {
   display: flex;
+  gap: 24px;
+  justify-content: center;
   align-items: flex-start;
   min-width: 586px;
-  justify-content: center;
-  gap: 24px;
   margin-bottom: 72px;
 }
 
@@ -308,33 +332,36 @@ img {
   padding: 12px 24px;
   border: 1px solid #e7e9fc;
   border-radius: 4px;
-  font-family: "Roboto";
-  font-style: normal;
+  background-color: var(--light-background-color);
+  color: var(--accent-color);
   font-weight: 500;
+  font-style: normal;
   font-size: 16px;
+  font-family: "Roboto";
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: var(--accent-color);
-  background-color: var(--light-background-color);
 }
 
 .filter-btn:hover,
 .filter-btn:focus {
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  color: var(--background-color);
   box-shadow: 0px 3px 1px rgb(0 0 0 / 10%), 0px 2px 1px rgb(0 0 0 / 8%),
     0px 2px 2px rgb(0 0 0 / 12%);
-  border-radius: 4px;
-  color: var(--background-color);
-  background-color: var(--accent-color);
 }
 
 .project-list {
   display: flex;
   flex-wrap: wrap;
-  gap: calc(var(--indent)*2) var(--indent);
+  gap: calc(var(--indent) * 2) var(--indent);
 }
 
 .project-item {
-  flex-basis: calc((100% - (var(--indent)*(var(--items-portfolio) - 1))) / var(--items-portfolio));
+  flex-basis: calc(
+    (100% - (var(--indent) * (var(--items-portfolio) - 1))) /
+      var(--items-portfolio)
+  );
 }
 
 .card-txt {
@@ -345,10 +372,10 @@ img {
 
 .project-title {
   padding-bottom: 8px;
+  color: var(--main-text-color);
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
-  color: var(--main-text-color);
 }
 
 .project-text {
